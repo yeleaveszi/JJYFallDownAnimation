@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="falldown">
+        <attr name="falldownimage" format="integer"/>
+        <attr name="number" format="integer"/>
+        <attr name="cycle" format="boolean"/>
+        <attr name="itemheight" format="integer"/>
+        <attr name="itemwidth" format="integer"/>
+
+    </declare-styleable>
+</resources>
