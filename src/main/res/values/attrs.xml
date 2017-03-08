@@ -6,6 +6,7 @@
         <attr name="cycle" format="boolean"/>
         <attr name="itemheight" format="integer"/>
         <attr name="itemwidth" format="integer"/>
-
+        <attr name="speedmin" format="integer"/>
+        <attr name="speedmax" format="integer"/>
     </declare-styleable>
 </resources>

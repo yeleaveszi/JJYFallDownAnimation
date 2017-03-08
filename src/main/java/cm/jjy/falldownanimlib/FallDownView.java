@@ -28,6 +28,9 @@ public class FallDownView extends View{
     private boolean cycle;
     private int itemHeight=-1;
     private int itemWidth=-1;
+    private int speed_min;
+    private int speed_max;
+
     Random random = new Random();
 
     public FallDownView(Context context) {
@@ -38,11 +41,14 @@ public class FallDownView extends View{
     public FallDownView(Context context, AttributeSet attrs) {
         super(context, attrs);
         TypedArray a = context.obtainStyledAttributes(attrs,R.styleable.falldown);
-        imageId = a.getResourceId(R.styleable.falldown_falldownimage, R.drawable.star);
+        imageId = a.getResourceId(R.styleable.falldown_falldownimage, R.drawable.birthdaycake);
         itemnumber = a.getInteger(R.styleable.falldown_number,1);
         cycle = a.getBoolean(R.styleable.falldown_cycle,false);
         itemHeight = a.getInteger(R.styleable.falldown_itemheight,-1);
         itemWidth = a.getInteger(R.styleable.falldown_itemwidth,-1);
+        speed_max = a.getInteger(R.styleable.falldown_speedmax,20);
+        speed_min = a.getInteger(R.styleable.falldown_speedmin,5);
+
 
         a.recycle();
     }
@@ -96,7 +102,7 @@ public class FallDownView extends View{
             }
             int initx = random.nextInt(getWidth());
             int speedx = random.nextInt(10)-5;
-            int speedy = random.nextInt(15)+5;
+            int speedy = random.nextInt(speed_max-speed_min)+speed_min;
             viewItem.setX(initx);
             viewItem.setY(0);
             viewItem.setSpeedy(speedy);
@@ -123,6 +129,7 @@ public class FallDownView extends View{
                             int initx = random.nextInt(getWidth());
                             viewItem.setY(0);
                             viewItem.setX(initx);
+                            viewItem.setSpeedy(random.nextInt(speed_max-speed_min)+speed_min);
                         }else{
                             //valueAnimator.cancel();
                         }
