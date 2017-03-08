@@ -1,5 +1,8 @@
 # JJYFallDownAnimation
-an easy-to-use FallDownAnimation
+</br>
+<img src="https://github.com/yeleaveszi/JJYFallDownAnimation/blob/master/falldown.gif">
+</br>
+</br>
 ```xml
                 <cm.jjy.falldownanimlib.FallDownView
                     android:id="@+id/falldownview4"
